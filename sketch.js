@@ -1,7 +1,7 @@
 var sound1;
 
 function preload() {
-  sound1 = loadSound("47538_feveran_strong_rock.mp3");
+  sound1 = loadSound("My Sad Old Heart_The 126ers.mp3");
 }
 
 function setup() {
@@ -30,13 +30,13 @@ function draw() {
     fc = map(mouseX, 0, width, 0, 100);
     fc1 = map(mouseY, 0, width, 0, 200);
   }
-
+  
   // 圓形變化
   for (var y = 50; y <= height + w / 2; y = y + w) {
     for (var x = 50; x <= width + w / 2; x = x + w) {
       stroke("#a9def9"); //圖形邊框顏色
-      strokeWeight(5); //圖形邊框粗細
-      ellipse(x, y, w + fc); //畫大園
+      strokeWeight(3); //圖形邊框粗細
+      ellipse(x+50, y, w + fc); //畫大園
 
       stroke("#ffafcc");
       strokeWeight(3);
@@ -48,16 +48,15 @@ function draw() {
 
       stroke("#8d99ae");
       strokeWeight(3);
-      triangle(x - w / 2+20 + fc , y + w / 2-30, x + w / 2-20, y + w / 2-30, x, y - w / 2+20 + fc); //畫朝上正三角形
+      triangle(x - w / 2+20, y + w / 2-30 + fc, x + w / 2-20, y + w / 2-30 + fc, x, y - w / 2+20 + fc); //畫朝上正三角形
 
       //第1點的x+隨滑鼠變動,y(左下點),第2點的x,y(右下點),第3點的x,y+隨滑鼠變動(上點)
 
       stroke("#e7c6ff");
       strokeWeight(3);
-      triangle(x + w / 2-20, y - w / 2+30 + fc, x - w / 2+20, y - w / 2+30 + fc, x, y + w / 2-20+ fc); //畫朝下正三角形
+      triangle(x + w / 2-20 + fc , y - w / 2+30, x - w / 2+20 + fc, y - w / 2+30, x + fc, y + w / 2-20); //畫朝下正三角形
 
         //第1點的x,y+隨滑鼠變動,第2點的x,y隨滑鼠變動+,第3點的x,y+隨滑鼠變動
-
     }
   }
 
@@ -66,7 +65,14 @@ function draw() {
   stroke("#ff85a1");
   strokeWeight(3);
   text("412730185游子伶", width / 2-200, height / 2-100);
+  
+  textSize(30);
+  stroke("#6d6875");
+  strokeWeight(3);
+  fill("#e5989b");
+  text(" 教科一B " , mouseX, mouseY);
 }
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
